@@ -1,0 +1,18 @@
+<div id="uploader">
+	<div class="body-overlay"><div><img src="./gfx/loading_1.gif" width="64px" height="64px"/></div></div>
+	<div class="bgColor">
+		<form id="uploadForm" action="{url}" method="post" enctype="multipart/form-data">
+			<div class="targetOuter">
+				<div id="targetLayer"></div>
+				<img src="./gfx/photo.png"  class="icon-choose-image" />
+				<div id="uploadInput" >
+					<input name="userImage" id="userImage" type="file" class="inputFile" />
+					<input type="hidden" name="action" value="upload"/>
+				</div>
+			</div>
+			<div>
+				<button id="uploadButton" type="submit" class="button button-olive expanded" disabled>Upload File</button>
+			</div>
+		</form>
+	</div>
+</div>

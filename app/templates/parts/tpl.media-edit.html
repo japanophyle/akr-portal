@@ -1,0 +1,26 @@
+<form id="media" class="ajaxform" method="post" action="{url}">
+	<input type="hidden" name="action" value="{action}"/>
+	<input type="hidden" name="tbl" value="Media"/>
+	<input type="hidden" name="section" value="media"/>
+	<input type="hidden" name="id" value="{id}"/>
+	<div class="grid-x grid-margin-x widthlock">
+		<div class="cell small-9">
+			<div class="card">
+				<div class="card-divider title">Main Details</div>
+				<div class="card-section main">
+					<label>Nice Name<input placeholder="title" type="text" name="mda_nice_name" value="{mda_nice_name}" /></label>
+					<label>Filename<input placeholder="subtitle" type="text" name="mda_filename" value="{mda_filename}" disabled /></label>
+					<label>Path<input type="text" placeholder="slug" name="mda_path" value="{mda_path}" disabled /></label>
+					<label>Type<input type="text" placeholder="slug" name="mda_type" value="{mda_type}" disabled /></label>
+					<div class="button-group small expanded">
+						<button type="button" class="button small button-red expanded loadME" data-ref="{delete}"><i class="fi-x"></i> Delete</button>
+						<button type="submit" class="button small button-olive expanded">{submit}</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="cell auto">
+			{sidebar}
+		</div>
+	</div>
+</form>

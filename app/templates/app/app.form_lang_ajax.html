@@ -1,0 +1,34 @@
+<form id="form1" class="ajaxForm" name="form1" method="post" action="{form_url}">
+	<input name="action" type="hidden" value="{form_action}">
+	<input name="ID" type="hidden" value="{id}">
+	<input id="english" name="english" type="hidden" value="{english}"/>
+	<input name="language" type="hidden" value="{language}"/>
+	<label>English <input id="eng" name="eng" type="text" {eng_disable} value="{english}"/></label>
+	<label>Translation: ({language}) <input name="translation" type="text" value="{translation}"/></label>
+	<label>Google Translation: <a class="link-blue {google_class}" title="get translation" href="#nogo" data-link="#eng" data-ref="{google_url}">Translate</a><span id="gtrans" class="faux-input"></span></label>
+   <button class="button button-olive expanded" type="submit">{form_button}</button>
+</form>	
+<script>
+var $tmpFormX=$("#form1");
+$tmpFormX.find("a.getTranslation").on("click",function(e){
+	e.preventDefault();
+	e.stopPropagation();
+	var str=$tmpFormX.find("#eng");
+	var english=$tmpFormX.find("#english");
+	var url=$(this).data('ref');
+	var v=$.trim(str.val());
+	if(v && v!=""){
+		var u=url+encodeURIComponent(v);
+		var r=JQD.utils.getJsonData(false,u,'GET');
+		r.done(function(o){
+			if(o.message){
+				var type=(o.type)?o.type:'primary';
+				JQD.utils.renderNotice({message:o.message,'type':type});
+			}
+			if(o.refresh) location.reload();
+			if(o.target) JQD.utils.swapContents(o.content,o.target);
+			english.val(v);
+		});
+	}
+});
+</script>

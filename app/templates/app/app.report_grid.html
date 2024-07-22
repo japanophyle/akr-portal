@@ -1,0 +1,27 @@
+   <link href="assets/css/mgrid.min.css" rel="stylesheet" />
+   <div class="ip_grid">
+		<div class="callout primary"><i class="fi-info"></i> Select a report or report format, click &amp; drag the column headers into the desired order, then click one of the download buttons.<br/>Reload the page to reset the columns.<br/><small class="text-maroon"><strong>Note:</strong> When there are many columns the drag sorting does not work very well... sorry</small> &#9785;</div>
+		<div class="grid-x grid-margin-x">
+			<div class="cell medium-auto large-shrink">
+				{selector}
+			</div>
+			<div class="cell medium-auto large-shrink">
+				{sorter}
+			</div>
+			<div class="cell small-12 medium-auto">
+				<div class="button-group small stacked-for-small">
+					<button class="button button-dark-green export_button" data-ref="xlsx"><i class="fi-download" title="download data in XLSX format"></i> XLSX</button>
+					<button class="button button-blue export_button" data-ref="csv"><i class="fi-download" title="download data in CSV format"></i> CSV</button>
+					{controls}				
+				</div>
+			</div>
+		</div>			
+		<div class="ip_grid_wrapper">
+			<table id="report_mgrid" class="ip_grid_sheet">
+				<thead>{headers}</thead>
+				<tbody>{rows}</tbody>
+			</table>
+		</div>
+	</div>
+   
+		

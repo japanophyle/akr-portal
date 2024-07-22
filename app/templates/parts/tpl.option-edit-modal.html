@@ -1,0 +1,31 @@
+<style>.reveal .card-section.main {max-height: 100%;overflow-Y: auto;}</style>
+<form id="option" class="ajaxform" method="post" action="{url}">
+	<input type="hidden" name="action" value="{action}"/>
+	<input type="hidden" name="tbl" value="Option"/>
+	<input type="hidden" name="section" value="option"/>
+	<input type="hidden" name="id" value="{id}"/>
+	<div class="modal-body">
+		<div class="tabs-content">
+			<div class="tabs-panel is-active" id="panel_1">
+				<label>Name: <small class="text-maroon">Option names cannot be changed</small>
+					<input placeholder="name" type="text" value="{OptionName}"  disabled />
+				</label>
+				<label>Group: 
+					<input placeholder="my group" type="text" name="OptionGroup" value="{OptionGroup}" list="groups"/>
+					<datalist id="groups">{groups}</datalist>
+				</label>
+				<label>Description: <small class="text-maroon">A brief description of the option</small>
+					<input placeholder="whats it for?" type="text" name="OptionDescription" value="{OptionDescription}" />
+				</label>
+				{OptionValue}
+			</div>
+		</div>
+	</div>
+	<div class="button-group expanded">
+		{controls}
+		<button type="submit" class="button small button-olive">{submit}</button>
+	</div>	
+</form>
+<script>
+	$('.reveal .modal-body').foundation();
+</script>

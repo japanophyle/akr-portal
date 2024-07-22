@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width">
+    <style type="text/css">
+* { margin: 0; padding: 0; font-size: 100%; font-family: 'Avenir Next', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; line-height: 1.65; }
+img { max-width: 100%; margin: 0 auto; display: block; }
+body, .body-wrap { width: 100% !important; height: 100%; background: #ccc; }
+a { color: #814D93; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.text-left { text-align: left; }
+.button { display: inline-block; color: white; background: #814D93; border: solid #814D93; border-width: 10px 20px 8px; font-weight: bold; border-radius: 4px; }
+.button:hover { text-decoration: none; }
+h1, h2, h3, h4, h5, h6 { margin-bottom: 20px; line-height: 1.25; }
+h1 { font-size: 32px; }
+h2 { font-size: 28px; }
+h3 { font-size: 24px; }
+h4 { font-size: 20px; }
+h5 { font-size: 16px; }
+p, ul, ol { font-size: 16px; font-weight: normal; margin-bottom: 20px; }
+.container { display: block !important; clear: both !important; margin: 0 auto !important; max-width: 580px !important; }
+.container table { width: 100% !important; border-collapse: collapse; }
+.container .masthead { padding: 0; margin:0; background: #814D93; color: white; text-align:left;}
+.container .masthead h1 { margin: 0 auto !important; max-width: 90%;}
+.container .content { background: white; padding: 30px 35px; }
+.container .content.footer { background: none; }
+.container .content.footer p { margin-bottom: 0; color: #888; text-align: center; font-size: 14px; }
+.container .content.footer a { color: #888; text-decoration: none; font-weight: bold; }
+.container .content.footer a:hover { text-decoration: underline; }
+/* custom styles */
+a {color: #814793;}
+.container .masthead h1 {font-size:25px;}
+.container .masthead {background-color: #efefef; width:auto;}
+.container .masthead.logo{width:50px;max-width:150px;} 
+.container .masthead img{max-height:150px;}
+.container .masthead.info div{padding:0px;margin-top:10px;margin-right:10px;}
+.button{background-color: #814793; color:#fff; border: solid #814793;border-width: 10px 20px 8px;}
+    </style>
+</head>
+<body style="margin: 0;padding: 0;font-size: 100%;font-family:sans-serif;line-height: 1.65;height: 100%;background: #ccc;width: 100% !important;">
+<table class="body-wrap" style="margin: 0;padding: 0;font-size: 100%;font-family:sans-serif;line-height: 1.65;height: 100%;background: #ccc;width: 100% !important;">
+    <tr style="margin: 0;padding: 0;font-size: 100%;font-family:sans-serif;line-height: 1.65;">
+        <td class="container" style="margin: 0 auto !important;padding: 0;font-size: 100%;font-family:sans-serif;line-height: 1.65;display: block !important;clear: both !important;max-width: 580px !important;">
+            <table style="margin: 0;padding: 0;font-size: 100%;font-family: border-collapse: collapse;width: 100% !important;">
+                <tr style="margin: 0;padding: 0;font-size: 100%;">
+                    <td colspan="2" class="content" style="border-bottom:1px solid #814D93; margin: 0;padding: 30px 35px;font-size: 100%;font-family: sans-serif;line-height: 1.65;background: white;">
+						{::content::}
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr style="margin: 0;padding: 0;font-size: 100%;font-family:sans-serif;line-height: 1.65; background-color:#efefef;">
+        <td class="container" style="margin: 0 auto !important;padding: 0;font-size: 100%;font-family:sans-serif;line-height: 1.65;display: block !important;clear: both !important;max-width: 580px !important;">
+            <table style="margin: 0;padding: 0;font-size: 100%;font-family: sans-serif;line-height: 1.65;border-collapse: collapse;width: 100% !important;">
+                <tr style="margin: 0;padding: 0;font-size: 100%;font-family: sans-serif;line-height: 1.65;">
+                    <td align="left" class="masthead logo" style="vertical-align:top;width:50px; max-width:150px; margin: 0;padding: 0;#ccc;background-color: #efefef;">
+						<img src="{::logo::}" style="height:100px; vertical-align:top;" height="100px">
+                    </td>
+                    <td align="right" class="masthead info" style="vertical-align:top; padding:0; width: auto;margin: 0;font-size: 100%;font-family:sans-serif;ine-height: 1.65;color: #ccc;background-color: #efefef;">
+                        <div style="font-size: 18px;font-family: sans-serif;line-height: 1;margin-bottom: 0px;margin-top:10px;margin-right:10px;max-width: 100%%;color:#888;text-align:right;padding: 0px;">{::header::}</div>
+                    </td>
+                </tr>
+            </table>
+
+        </td>
+    </tr>
+</table>
+</body>
+</html>

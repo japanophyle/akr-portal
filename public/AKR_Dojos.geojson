@@ -1,0 +1,167 @@
+{
+	"type": "FeatureCollection",
+	"facilmap": {
+		"name": "AKR Dojos",
+		"searchEngines": false,
+		"description": "",
+		"clusterMarkers": "%clusterMarkers",
+		"views": [
+
+		],
+		"types": {
+			"21419": {
+				"fields": [
+					{
+						"name": "Description",
+						"type": "textarea"
+					}
+				],
+				"name": "Line",
+				"type": "line",
+				"defaultColour": null,
+				"colourFixed": null,
+				"defaultSize": null,
+				"sizeFixed": null,
+				"defaultSymbol": null,
+				"symbolFixed": null,
+				"defaultShape": null,
+				"shapeFixed": null,
+				"defaultWidth": null,
+				"widthFixed": null,
+				"defaultMode": null,
+				"modeFixed": null,
+				"showInLegend": null
+			},
+			"21420": {
+				"fields": [
+					{
+						"name": "Description",
+						"type": "textarea"
+					}
+				],
+				"name": "Marker",
+				"type": "marker",
+				"defaultColour": null,
+				"colourFixed": null,
+				"defaultSize": null,
+				"sizeFixed": null,
+				"defaultSymbol": null,
+				"symbolFixed": null,
+				"defaultShape": null,
+				"shapeFixed": null,
+				"defaultWidth": null,
+				"widthFixed": null,
+				"defaultMode": null,
+				"modeFixed": null,
+				"showInLegend": null
+			}
+		}
+	},
+	"features": [
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-80.27567047581903,
+					26.178520880187207
+				]
+			},
+			"properties": {
+				"name": "South Florida Kyudo Kai",
+				"colour": "814793",
+				"size": 25,
+				"symbol": null,
+				"shape": null,
+				"data": {
+					"Description": "Leader: Jade Clayton Fraundorfer\nAddress: 5150 NW 109th Ave, Suite 4, Sunrise, 33351"
+				},
+				"typeId": 21420
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-110.76373037818182,
+					31.953406519999998
+				]
+			},
+			"properties": {
+				"name": "Arizona Kyudo Kai",
+				"colour": "814793",
+				"size": 25,
+				"symbol": null,
+				"shape": null,
+				"data": {
+					"Description": "Leader: Bill Savary\nAddress: P.O. Box 815, Vail, AZ 85641"
+				},
+				"typeId": 21420
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.3434747,
+					33.7821009
+				]
+			},
+			"properties": {
+				"name": "Georgia Kyudo Renmei",
+				"colour": "814793",
+				"size": 25,
+				"symbol": null,
+				"shape": null,
+				"data": {
+					"Description": "Leader: Edwin Symmes\nAddress: 3977 Briarcliff Road, Atlanta, Georgia 30345"
+				},
+				"typeId": 21420
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-84.31231354605134,
+					33.921620938016055
+				]
+			},
+			"properties": {
+				"name": "Fuji Kyudojo",
+				"colour": "814793",
+				"size": 25,
+				"symbol": null,
+				"shape": null,
+				"data": {
+					"Description": "Leader: Tomio Kato\nAddress: 1850 Cotillion Drive #3411, Atlanta, GA ,30338"
+				},
+				"typeId": 21420
+			}
+		},
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					-86.52620631054248,
+					39.76357061332477
+				]
+			},
+			"properties": {
+				"name": "Indiana Kyudo Renmei",
+				"colour": "814793",
+				"size": 25,
+				"symbol": null,
+				"shape": null,
+				"data": {
+					"Description": "Leader: Takako Matsui Swain\nAddress: P.O. Box 682, Danville, IN 46122-0682\nWeb: http://www.indianakyudorenmei.net"
+				},
+				"typeId": 21420
+			}
+		}
+	]
+}

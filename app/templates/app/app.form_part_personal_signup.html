@@ -1,0 +1,64 @@
+<h3>{section_title}</h3>
+<div class="grid-container">
+	<div class="grid-x grid-padding-x">
+		<div class="cell medium-6">
+			<label for="text-first_name">{member_first_name_label}</label>
+			<input type="text" id="text-first_name" name="FirstName" value="{member_first_name}" class="required" required />
+		</div>
+		<div class="cell medium-6">
+			<label for="text-last_name">{member_last_name_label}</label>
+			<input type="text" id="text-last_name" name="LastName" value="{member_last_name}" class="required" required />
+		</div>
+	</div>
+	<div class="grid-x grid-padding-x">
+		<div class="cell medium-6">
+			<label for="text-email">{member_email_label}</label>
+			<input type="text" id="text-email" name="Email" value="{member_email}" class="required" required />
+		</div>
+		<div class="cell medium-6">
+			<label for="text-phone">{member_phone_label}</label>
+			<input type="text" id="text-phone" name="MobilePhone" value="{member_phone}" class="required" required />
+		</div>
+	</div>
+	<div class="grid-x grid-padding-x">
+		<div class="cell medium-6">
+			<label for="text-dob">{member_dob_label}</label>
+			<input type="date" id="text-dob" name="Birthdate" value="{member_dob}" class="required" required />
+		</div>
+		<div class="cell medium-6">
+			<label for="select-gender">{member_gender_label}</label>
+			<select id="select-gender" name="Sex" class="required" required >
+				{member_gender}
+			</select>
+		</div>
+	</div>
+    <div class="grid-x grid-padding-x">
+        <div class="cell">
+			<label for="textarea-address">{member_address_label}</label>
+			<textarea id="textarea-address" name="Address" required >{member_address}</textarea>
+			<label for="text-city">{member_city_label}</label>
+			<input type="text" id="text-city" name="City" value="{member_city}" required />
+			<label for="text-country">{member_country_label}</label>
+			<input type="text" id="text-country" name="Country" value="{member_country}"  required />
+			<label for="text-post_code">{member_post_code_label}</label>
+			<input type="text" id="text-post_code" name="PostCode" value="{member_post_code}"  class="required" required  />
+		</div>
+    </div>
+	<div class="grid-x grid-padding-x">
+		<div class="cell">
+			<label for="select-language">{member_language_label}</label>
+			<select id="select-language" name="Language" class="required" required >
+				{member_language}
+			</select>
+			<label for="text-citizenship">{member_citizenship_label}</label>
+			<input type="text" id="text-citizenship" name="meta[citizenship]" value="{member_citizenship}"  class="required" />
+			<label for="text-started-kyudo">{member_date_began_kyudo_label}</label>
+			<input type="date" id="text-started-kyudo" name="meta[date_began_kyudo]" value="{member_date_began_kyudo}" class="required" />
+			<label for="select-payment-method">{member_payment_method_label}</label>
+			<select id="select-payment-method" name="meta[payment_method]" class="required" >
+				{member_payment_method}
+			</select>
+		</div>
+	</div>
+
+</div>

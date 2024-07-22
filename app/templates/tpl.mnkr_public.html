@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en" >
+	<head>
+		<!-- Google tag (gtag.js) -->
+		<meta charset="utf-8" />
+		<title><?=$TPL_FOOT_TITLE ?></title>
+		<?=$TPL_METATAGS ?>
+		<meta http-equiv="x-ua-compatible" content="ie=edge"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<base href="<?=$TPL_URL ?>"/>
+        <link rel="shortcut icon" href="gfx/akr/akr_logo_badge.png" type="image/x-icon">
+		<?=$TPL_STYLES ?>
+		<?=$TPL_MAIN_CSS ?>
+		<style>		
+			#hero .hero-figure{
+				background: url('<?=URL; ?><?=$HERO_IMAGE ?>') no-repeat center center ;
+				background-size: cover;
+				height:100%;
+			}
+			.mnkr_footer{
+				background: url('gfx/akr/akr_footer_banner.jpg') no-repeat center center ;
+				background-size: cover;
+			}
+			.mnkr_footer_box{padding:2rem 0;font-size:1.2rem; color:#333;}
+			.mnkr_footer_box img{max-height:11rem;}
+			<?=$site_css ?>
+			<?=$TPL_BACKGROUND ?>
+		</style>
+		<?=$admincss ?>
+		<?=$capcss ?>   
+		<script><?=$globalJS ?></script>
+		<?=$gatop ?>
+	</head>
+	<body>
+		<div class="off-canvas position-left bg-gbm-dark-blue" id="offCanvas" data-off-canvas>
+			<!-- header -->
+			<div class="ocHeader">
+				<img class="logo" src="gfx/akr/akr_logo_badge.png" />
+				<button class="close-button link-red" aria-label="Close menu" type="button" style="top:0;" data-close>
+				  <span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<!-- content -->
+			<div id="ocBody_left" class="ocBody">
+				<?=$TPL_MOBILE_NAV ?>
+			</div>
+
+		</div>
+		<div class="off-canvas position-right" id="offCanvasRight" data-off-canvas data-transition="overlay">
+			<div class="ocHeader">
+				<h3>My Menu</h3>
+				<button class="close-button" aria-label="Close menu" type="button" data-close><span aria-hidden="true">&times;</span></button>
+			</div>
+			<!-- content -->
+			<div id="ocBody_right" class="ocBody">
+				<!-- TPL_USER_MENU -->
+			</div>
+		</div>
+
+		<div class="off-canvas-content" data-off-canvas-content>
+			<div class="bg-image"></div>
+			<div id="mainWrapper" class="grid-y grid-frame">
+				<div class="cell shrink header medium-cell-block-container">
+					<?=$TPL_USER_BAR ?>
+					<?=$TPL_RADIO_BAR ?>
+					<div class="top-bar" id="responsive-menu" style="width:100%">
+						<div class="top-bar-left">
+							<div class="infobar title show-for-small-only" data-toggle="offCanvas">
+								<button class="link-gbm-dark-blue expanded"><i class="fi-list icon-x1b"></i> <span><?=$TPL_TITLE ?></span></button>
+							</div>
+							<div class="infobar title show-for-medium">
+								<img class="logo" src="gfx/akr/akr_logo_badge.png" />
+								<span class="subheader text-dark-gray"><?=$TPL_TITLE ?></span>
+							</div>
+						</div>
+						<div class="top-bar-right show-for-medium">
+							<ul class="menu">
+								<?=$TPL_MAIN_NAV ?>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="cell auto medium-cell-block-container">
+					<canvas id="confetti"></canvas>
+					<div id="contents" class="grid-y">
+							<div id="main" class="cell">
+								<div id="hero" class="cell">
+									<figure class="hero-figure">
+										<img class="hero-image" src="<?=$HERO_IMAGE ?>"/>
+										<figcaption class="hero-caption">
+											<div class="kanji-wrapper">
+												<div class="kanji">アメリカ弓道連盟</div>
+											</div>
+										</figcaption>
+									 </figure>
+								</div>
+								<?=$TPL_CONTENT ?>
+							</div>
+							<div id="main_extra" class="cell">
+								<div class="grid-x grid-padding-x mnkr_footer">
+									<div class="cell medium-4"> </div>
+									<div class="cell medium-4"><div class="mnkr_footer_box"><?=$TPL_FOOTER ?></div></div>
+									<div class="cell medium-4"><div class="mnkr_footer_box"><img src="gfx/akr/akr_logo_badge.png"/></div></div>
+								</div>									
+							</div>
+							<div id="main_footer" class="cell footer show-for-small-only">
+								<div class="grid-container fluid">
+									<div class="grid-x grid-margin-x">
+										<div class="cell text-center medium-text-left">
+											<p><?=$TPL_TITLE ?> &copy; <?=date('Y'); ?><br/>Powered by <span class="link-green">jamSlim</span></p>
+										</div>
+									</div>
+								</div>
+							</div>
+					</div>
+				</div>
+				<div class="cell shrink footer show-for-medium">
+					<div class="grid-container fluid">
+						<div class="grid-x grid-margin-x">
+							<div class="cell medium-6 text-center medium-text-left">
+								<p><span class="loadME" data-ref="page/login"><?=$TPL_FOOT_TITLE ?></span> &copy; <?=date('Y'); ?></p>
+							</div>
+							<div class="cell medium-6 text-center medium-text-right">
+								<?=$TPL_SOCIAL ?> 
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		
+		
+		</div>
+		<!-- hidden elements -->
+		<div class="reveal small blurME" id="zurbModal" data-reveal data-multiple-opened="true" data-close-on-click="false" data-animation-in="slide-in-down" data-animation-out="slide-out-down"></div>
+		<div class="reveal small" id="zurbModal2" data-reveal data-multiple-opened="true" data-animation-in="slide-in-down" data-animation-out="slide-out-down" data-close-on-click="false"></div>
+		<?=$TPL_ADMIN_BAR ?>
+		<div id="main_spinner" ><div class="spinner" role="spinner"><div class="spinner-icon animate"></div></div></div>		
+		<div id="messenger"><?=$TPL_MESSAGE ?></div>
+		<div class="progress" id="progress_div"><div class="progress-meter bg-purple" id="bar1"><div class="progress-meter-text" id="percent1"></div></div></div>
+
+	
+		<script>
+			var tpl_dir="<?=$TPL_DIR ?>";
+			var base_ref="<?=$URL ?>";
+			function initTableExpander(multi){
+				var $tbl=$('.table-expand');
+				if($tbl.length){
+					var $triggers=$tbl.find('[data-open-details]');
+					var $expanders=$tbl.find('tr.table-expand-row-content');		
+					$triggers.on('click',function (e) {
+						e.preventDefault();
+						var $m =$(this);
+						var $n =$m.next();
+						if(!multi){
+							$expanders.not($n).removeClass('is-active');
+							$triggers.not($m).removeClass('is-active');
+						}
+						$n.toggleClass('is-active');
+						$m.toggleClass('is-active');
+					});					
+				}
+			}
+		</script>
+		<?=$TPL_SCRIPTS ?>
+	    <?=$TPL_JS_TEMPLATES ?>
+		<script>
+			"use strict";
+			var somethingChanged=false;
+			var jcalendar=false;
+			var jcalendarp=[];
+			var upfiles;
+			var flotFetched = {};
+			$(document).foundation();
+			<?=$jqd ?>
+			<?=$js ?>
+		</script>
+	</body>
+</html>
+

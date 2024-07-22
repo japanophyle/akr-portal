@@ -1,0 +1,28 @@
+<style>.reveal .card-section.main {max-height: 100%;overflow-Y: auto;}</style>
+<form id="formX" class="ajaxForm" action="{action_url}">
+	<div class="callout tabs-content">
+		<div class="grid-x margin-x">
+			<div class="cell small-5">
+				<strong class="text-gray">Member</strong>
+				{member}
+			</div>
+			<div class="cell small-7">
+				<strong class="text-gray">Event</strong>
+				{event}
+			</div>
+			<div class="cell small=12 tablescroll">
+				<table>
+					<thead><tr><th>Item Name</th><th>Price</th><th>Paid</th><th>Balance</th><th>Currency</th></tr></thead>
+					<tbody>{table}</tbody>
+				</table>
+			</div>
+		</div>
+		<strong class="text-gray">Payment Info:</strong>
+		{form}
+	</div>			
+	<div class="button-group small expanded">
+		<button type="button" class="button secondary" data-close=""><i class="fi-x"></i> Cancel</button>
+		{delete}
+		<button type="submit" class="button button-olive" data-close=""><i class="fi-check"></i> Update</button>
+	</div>
+</form>

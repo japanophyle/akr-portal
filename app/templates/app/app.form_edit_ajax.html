@@ -1,0 +1,10 @@
+<style>.reveal .card-section.main {max-height: 100%;overflow-Y: auto;}</style>
+<form id="form1" class="ajaxForm" name="form1" method="post" action="{form_url}">
+	<input name="action" type="hidden" value="{form_action}">
+	<input name="ID" type="hidden" value="{id}">
+	{form_parts}
+   <button class="button button-olive expanded" type="submit">{form_button}</button>
+</form>	
+<script>
+	$('.reveal .card-section.main').foundation();
+</script>

@@ -1,0 +1,161 @@
+.bar-chart-wrapper{
+	padding-bottom:2.5rem;
+	position:relative;
+}
+.bar-chart-v {
+  padding: 0;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: nowrap;
+  height: 225px;
+  margin: 0;
+  border:1px #ccc solid;
+}
+
+.bar-chart-v li {
+  display: block;
+  padding: 1.5625rem 0;
+  position: relative;
+  text-align: center;
+  vertical-align: bottom;
+  border-radius: 4px 4px 0 0;
+  min-width: 1rem;
+  height: 100%;
+  margin: 0 1.8% 0 0;
+  -webkit-flex: 1 1 15%;
+      -ms-flex: 1 1 15%;
+          flex: 1 1 15%;
+}
+.bar-chart-v li .bar{
+	padding: 1.5625rem 0;
+}
+.bar-chart-v li.short-bar{
+  padding: 0.5625rem 0;
+}
+.bar-chart-v .bar-chart-v-axis {
+  padding:0 0 1.5625rem 0;
+    -webkit-flex: 1 1 8%;
+      -ms-flex: 1 1 8%;
+          flex: 1 1 8%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.bar-chart-v .bar-chart-v-label {
+  margin: 0;
+  background-color: none;
+  color: #ccc;
+  position: relative;
+
+}
+.bar-chart-v .percent{
+	font-weight:bold;
+	color: #fff;
+}
+
+.bar-chart-v .percent {
+  opacity: 0.4;
+  width: 100%;
+  font-size: 1rem;
+  position: absolute;
+  top:0;
+}
+.bar-chart-v .short-bar .percent {
+	top:-1.5rem;
+	opacity: 0.5;
+	color: #000!important;
+}
+
+.bar-chart-v .percent span {
+  font-size: 1.875rem;
+}
+
+.bar-chart-v .description {
+  opacity: 0.5;
+  width: 100%;
+  bottom: -2.5rem;
+  position: absolute;
+  font-size: 0.8rem;
+  overflow: hidden;
+  height:2.5rem;
+  display:table-cell;
+  vertical-align:text-top;
+  color:#333;
+}
+
+.bar-chart-v .bar.primary {
+  border: 1px solid #1779ba;
+  background: linear-gradient(#2196e3, #1779ba 70%);
+}
+
+.bar-chart-v .bar.secondary {
+  border: 1px solid #767676;
+  background: linear-gradient(#909090, #767676 70%);
+}
+
+.bar-chart-v .bar.success {
+  border: 1px solid #3adb76;
+  background: linear-gradient(#65e394, #3adb76 70%);
+}
+
+.bar-chart-v .bar.warning {
+  border: 1px solid #ffae00;
+  background: linear-gradient(#ffbe33, #ffae00 70%);
+}
+
+.bar-chart-v .bar.alert {
+  border: 1px solid #cc4b37;
+  background: linear-gradient(#d67060, #cc4b37 70%);
+}
+
+
+
+@media print, screen and (min-width: 40em) {
+	/* medium up */
+  .bar-chart-v li {
+   /* min-width:2.5rem;*/
+  }
+  .bar-chart-v .bar-chart-v-label:before, .bar-chart-v .bar-chart-v-label:after {
+    content: "";
+    position: absolute;
+    border-bottom: 1px dashed #8a8a8a;
+    top: 0;
+    left: 0;
+    height: 50%;
+    width: 20%;
+  }
+  .bar-chart-v .bar-chart-v-label:after {
+    left: auto;
+    right: 0;
+  }
+  .bar-chart-v .percent {
+	letter-spacing: -3px;
+    font-size: 1.875rem;
+    top:-0.5rem;
+  }
+  .bar-chart-v .short-bar .percent {
+	top:-2.5rem;
+  }
+  .bar-chart-v .description{
+	/*font-size:1rem;*/
+  }
+  
+}
+
+@media print, screen and (min-width: 64em) {
+	/* large up */
+  .bar-chart-v .bar-chart-v-label:before, .bar-chart-v .bar-chart-v-label:after {
+    width: 30%;
+  }
+}
+
+
+

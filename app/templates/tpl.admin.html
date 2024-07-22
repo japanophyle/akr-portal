@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en" >
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="x-ua-compatible" content="ie=edge"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="robots" content="noindex, nofollow" />
+		<base href="<?=$TPL_URL ?>"/>
+		<title><?=$SITE_TITLE ?></title>
+		<link rel="shortcut icon" href="favicon2.ico" type="image/x-icon">
+		<?=$TPL_STYLES ?>
+    	<?=$admincss ?>
+    	<style>
+			.reveal .card-section.main{max-height:35rem; overflow-Y:auto;}
+			.reveal .dataTable thead th{top:-8px;}
+    	</style>
+		<script><?=$globalJS ?></script>
+	</head>
+	<body>
+		<div class="off-canvas position-left" id="offCanvas" data-off-canvas>
+			<!-- header -->
+			<div id="ocHeader">
+				<button class="close-button" aria-label="Close menu" type="button" data-close>
+				  <span aria-hidden="true">&times;</span>
+				</button>
+				<div class="title"><i class="fi-widget"></i> Settings</div>
+			</div>
+
+			<!-- content -->
+			<div id="ocBody">
+				<?=$TPL_SETTINGS_MENU ?>
+			</div>
+
+		  </div>
+
+		<div class="off-canvas-content" data-off-canvas-content>
+			<div id="mainWrapper" class="grid-y grid-frame">
+				 <div class="cell shrink banner medium-cell-block-container">
+				 </div>
+				<div class="cell shrink header medium-cell-block-container">
+					<div data-sticky-container="">
+						<div data-sticky="" data-options="marginTop:0;">
+							<?=$TPL_USER_BAR ?>
+							<div class="top-bar" id="responsive-menu" style="width:100%">
+								<div class="top-bar-left">
+									<div class="infobar title show-for-medium">
+										<?=$TPL_ICON ?> <?=$SITE_TITLE ?>: <span class="subheader"><?=$TPL_TITLE ?></span>
+									</div>
+								</div>
+								<div class="top-bar-right">
+									<ul class="menu">
+										<?=$TPL_MAIN_NAV ?>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>					
+				</div>
+				<div class="cell auto medium-cell-block-container scroll-y">
+					<div id="contents" class="grid-y">
+							<div id="main" class="cell">
+								<?=$TPL_CONTENT ?>
+							</div>
+							<div id="main_extra" class="cell">
+									<?=$TPL_FOOTER ?>
+							</div>
+					</div>
+				</div>
+				<div class="cell shrink footer">
+					<div class="grid-container fluid">
+						<div class="grid-x grid-margin-x">
+							<div class="cell medium-6 text-center medium-text-left">
+								<p><?=$SITE_TITLE ?> Admin &copy; <?=date('Y'); ?></p>
+							</div>
+							<div class="cell medium-6 text-center medium-text-right">
+								<p>Powered by <span class="link-green">jamSlim</span></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		
+		</div>
+		<!-- hidden elements -->
+		<?=$TPL_ADMIN_BAR ?>
+		<div class="reveal small blurME" id="zurbModal" data-reveal data-close-on-click="false" data-animation-in="scale-in-up" data-animation-out="scale-out-down">
+			<div class="header">
+				<span class="reveal-title">Modal</span>
+				<button class="close-button" data-close aria-label="Close modal" type="button"><span aria-hidden="true">&times;</span></button>
+			</div>
+			<div class="reveal-content">
+				 <p>Modal Content Goes here</p>
+			</div>
+		</div>
+		<div class="reveal small" id="zurbModal2" data-reveal data-multiple-opened="true" data-animation-in="slide-in-down" data-animation-out="slide-out-down" data-close-on-click="false">
+			<div class="header">
+				<span class="reveal-title">Modal</span>
+				<button class="close-button" data-close aria-label="Close modal" type="button"><span aria-hidden="true">&times;</span></button>
+			</div>
+			<div class="reveal-content">
+				 <p>Modal Content Goes here</p>
+			</div>
+		</div>
+		<div id="main_spinner" ><div class="spinner" role="spinner"><div class="spinner-icon animate"></div></div></div>		
+		<div id="messenger"><?=$TPL_MESSAGE ?></div>
+		<div class="progress" id="progress_div"><div class="progress-meter bg-aqua" id="bar1"><div class="progress-meter-text" id="percent1"></div></div></div>
+
+	
+		<script>
+			var tpl_dir="<?=$TPL_DIR ?>";
+			var base_ref="<?=$URL ?>";
+		</script>
+		<?=$TPL_SCRIPTS ?>
+
+	    <?=$TPL_JS_TEMPLATES ?>
+		<script>
+			"use strict";
+			var somethingChanged=false;
+			var jcalendar=false;
+			var jcalendarp=[];
+			var upfiles;
+			var flotFetched = {};
+			
+			function debounceMe(t, e, i) {
+				var a;
+				return function() {
+					var n = this,
+						o = arguments,
+						s = i && !a;
+					clearTimeout(a), a = setTimeout(function() {
+						a = null, i || t.apply(n, o)
+					}, e), s && t.apply(n, o)
+				}
+			}
+			function getData(action,args,uri,ctype){
+				if(action!=='POST') action='GET';
+				var xhr=$.ajax({
+					url: uri,
+					type: action,
+					data: args,
+					contentType: ctype,
+					processData:false
+				});
+				return xhr;
+			}
+			function initNavman_old(){
+				var $holder=$('#navList');
+				if($holder!==undefined){
+					var $list_a=$holder.find('#list_a');
+					var $list_b=$holder.find('#list_b');
+					//init sortable
+					$holder.find('#list_a, #list_b').sortable({connectWith: '.connected',items: ':not(.disabled)'});
+					$list_b.find('.removeME').on('click',function(e){
+						e.preventDefault(); 
+						jQuery(this).closest('li').fadeOut('fast',function(){
+							jQuery(this).remove();
+						});
+					});
+				}
+			}
+			function initNavman(){
+				var _options = {
+					hintCss: {'border': '1px dashed #13981D'},
+					placeholderCss: {'background-color': 'gray'},
+					ignoreClass: 'button',
+					insertZone:100,
+					opener: {
+						active: true,
+						as: 'html',
+						close: '<i class="icon caret-down tiny"></i>',
+						open: '<i class="icon caret-right tiny"></i>',
+						openerCss: {'margin-right': '10px'},
+						openerClass: 'button bg-maroon tiny'
+					}
+				};
+				menuEditor('nv_main', {listOptions: _options, iconPicker: false, labelEdit: 'Edit', labelRemove: 'X'});
+				//var NVM = new navManager('#navMan');
+				//NVM.init();
+			 }
+			function initUploader(){
+				var $holder=$("#uploader");
+				var $UF=$holder.find("#uploadForm");
+				var $UP=$holder.find('#uploadInput');
+				var $UI=$holder.find('#userImage');
+				var $UT=$holder.find('#targetLayer');
+				var $UB=$holder.find('#uploadButton');
+				var $UV=$holder.find(".body-overlay").first();
+				var $UC=$holder.find(".icon-choose-image");
+				
+				var showPreview=function (objFileInput) {
+					if (objFileInput.files[0]) {
+						var fileReader = new FileReader();
+						fileReader.onload = function (e) {
+							$UT.html('<img src="'+e.target.result+'" style="height:22rem" class="upload-preview" />');
+							$UT.css('opacity','0.7');
+							$UC.css('opacity','0.5');
+							$UB.prop('disabled',false);						
+						}
+						fileReader.readAsDataURL(objFileInput.files[0]);
+					}
+				};
+				
+				$UI.on('change',function(e){
+					showPreview(this);
+				});
+				
+				$UF.on('submit',function(e) {
+					e.preventDefault();
+					var u=$UF.attr('action');
+					var d=new FormData(this);
+					$UV.show();
+					var post=getData('POST',d,u,false);
+					post.done(function(r){
+						if(r.message){
+							JQD.utils.renderNotice(r);
+						}
+						if(r.content){
+							$UT.html(r.content).css('opacity','1');
+						}
+						$UV.fadeOut(333);
+					});
+				});
+			}
+			
+			function slidePreview(){
+				var $doc=$(document);
+				var $PV=$doc.find('#slidePreview');
+				var $imgLink=$doc.find('#imgLink');
+				var $reAnimate=$doc.find('#reAnimate');
+				var $selectAnimation=$doc.find('#selectAnimation');
+				var $targetEl=$doc.find('#transition');
+				var $pvTransition=$doc.find('#pvTransition');
+				var $slide=$PV.find('#pvContent');
+				var $font_size=$doc.find('#font_size');
+				var $font_color=$doc.find('#clr_0');
+				var $bg_position=$doc.find('#bg_position');
+				var delay=500;
+				var transition;
+				var ptransition;
+				var slide_class;
+				
+				function animateContent(){
+					var animateIn=function(){
+						ptransition=transition;
+						$slide.addClass('animate__'+transition).show();
+					};
+					$slide.removeClass('animate__'+ptransition).hide();
+					setTimeout(animateIn,delay);
+				}
+				function setSelect($el,strVal){
+					$el.find("option").filter(function() {
+					  //may want to use $.trim in here
+					  return $(this).text() == strVal;
+					}).prop('selected', true);
+				}
+				function setSlideClass(){
+					var b='trumbowyg-editor ';
+					var c='text-'+$font_color.val()+' ';
+					c=c +'slide-text-'+$font_size.val()+' ';
+					c=c.replace('site-main','gbm-blue');
+					c=c.replace('site-dark','gbm-dark-blue');
+					slide_class=c;
+					$doc.find('.'+b).prop('class',b+slide_class);
+				};
+				
+				$reAnimate.on('click',function(e){
+					e.preventDefault();
+					e.stopPropagation();
+					animateContent();
+				});
+				$selectAnimation.on('click',function(e){
+					e.preventDefault();
+					e.stopPropagation();
+					setSelect($targetEl,transition);
+					$PV.foundation('close');
+				});
+				$pvTransition.on('change',function(e){
+					transition=$pvTransition.find('option:selected').text();
+				});
+				$font_size.on('change',function(e){
+					setSlideClass();
+				});
+				$font_color.on('change',function(e){
+					setSlideClass();
+				});
+				$('#imgLinker').on('input', ':text', function(){ 
+					$doc.find('#slide-wrapper .trumbowyg-box').css('background-image','url(' + $imgLink.val() + ')');
+				});
+				$bg_position.on('change', function(){ 
+					$doc.find('#slide-wrapper .trumbowyg-box').css('background-position',$bg_position.val()+' center');
+				});
+				$('.slide-preview').on('click',function(e){
+					e.preventDefault();
+					e.stopPropagation();
+					transition=$targetEl.find('option:selected').text();
+					setSelect($pvTransition,transition);
+					setSlideClass();
+					var content=$doc.find('#slide-build').val();
+					var bg=$imgLink.val();
+					if(bg && bg!=='') $PV.find('#pvSlide').css('background-image','url(' + bg + ')').prop('class','css-slide '+slide_class);
+					$slide.html(content);
+					$PV.foundation('open');
+					animateContent();
+				});
+				setSlideClass();
+			}
+			function initSlimPicker(){
+				var $holder=$("#slimPicker");
+				var $picker=$holder.find('#pick');
+				function pickValue(){
+					var sel=$holder.find('input[name="pickval"]:checked').val();
+					var inp=$holder.data('inp');
+					$(inp).val(sel).trigger('change');
+					JQD.utils.closeModal();
+				}
+				$holder.on('submit',function(e){
+					e.preventDefault();
+					e.stopPropagation();
+				});
+				$picker.on('click',function(e){
+					e.preventDefault();
+					e.stopPropagation();
+					pickValue();					
+				});				
+			}
+
+			$(document).foundation();
+			<?=$jqd ?>
+			JQD.ext.initEditor(".inpage_edit");
+			JQD.inits.initSelectME(".selectME");
+			myFilter('#dTable_filter','#dTable tbody tr');
+			$('.dataTable').stupidtable();
+			<?=$js ?>
+		</script>
+	</body>
+</html>
+

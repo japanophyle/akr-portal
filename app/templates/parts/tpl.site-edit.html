@@ -1,0 +1,15 @@
+<form id="site" class="ajaxform" method="post" action="{form_url_site}">
+	<input type="hidden" name="action" value="{action}"/>
+	<input type="hidden" name="tbl" value="Options"/>
+	<input type="hidden" name="section" value="site"/>
+	<input type="hidden" name="id" value="{id}"/>
+	<input type="hidden" name="name" value="{OptionName}"/>
+	<label>Option Name <small class="text-maroon">Option names cannot be changed</small><input placeholder="name" type="text" value="{OptionName}" disabled /></label>
+	<label>Option Description <small class="text-maroon">A brief description of the option</small><input placeholder="name" type="text" name="OptionDescription" value="{OptionDescription}" /></label>
+	{OptionValue}
+	<div class="button-group small expanded">
+		<button type="button" class="button small secondary expanded" data-close><i class="fi-x"></i> Cancel</button>
+		<button type="submit" class="button small button-olive expanded">{submit}</button>
+	</div>
+</form>
+{js}

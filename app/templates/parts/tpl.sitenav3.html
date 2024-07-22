@@ -1,0 +1,68 @@
+<style>
+	.reveal .modalTitle{padding:0 0.5rem;}
+	.reveal > .callout{margin:0 0.5rem 0.5rem;}
+</style>
+<div id="navManager" class="grid-x grid-margin-x">
+	<div class="medium-4 cell">
+		<h3>Available Pages</h3>
+		<div class="callout" >
+			<input type="text" id="filter_a" data-ref="nv_pages" placeholder="Search" title="search for available pages"/>
+			<div style="max-height:60vh;overflow-y:auto;">
+				<ul id="nv_pages" class="menu-sorter">
+					{opt_pages}
+				</ul>
+			</div>
+		</div>
+		<div class="reveal" id="editME" data-reveal data-animation-in="slide-in-down" data-animation-out="slide-out-down">
+			<div class="modalTitle"><h3>Edit</h3></div>
+			<div class="callout">
+				<form id="frmEdit" action="{form_action}">
+					<input type="hidden" name="id" value="{id}"/>
+					<input type="hidden" name="token" value="{token}"/>
+					<table class="editTable" >
+						<tbody>
+							<tr><th>Menu Text</th><td><input type="text" class="form-control" id="mnu_text" name="mnu_text" placeholder="Text"></td></tr>
+							<tr><th>URL</th><td><input type="text" class="form-control" id="mnu_href" name="mnu_href" placeholder="URL"></td></tr>
+							<tr><th>Target</th><td><select id="mnu_target" name="mnu_target" class="form-control"><option value="_self">Self</option><option value="_blank">Blank</option><option value="_top">Top</option></select></td></tr>
+							<tr><th>Tooltip</th><td><input type="text" class="form-control" id="mnu_title" name="mnu_title" placeholder="Text"></td></tr>
+						</tbody>
+					</table>
+					<div class="fcontrols clearfix">
+						<button type="button" class="button small float-right btnUpdate" disabled><i class="fi-check"></i> Update</button>
+						<button type="button" class="button small bg-purple btnAddThis" disabled><i class="fi-plus"></i> Add</button>
+					</div>
+				</form>
+			 </div>
+			<button style="top:0;" class="close-button" data-close aria-label="Close modal" type="button"><span aria-hidden="true"><i class="fi-x-circle icon-x2 link-white"></i></span></button>
+		</div>
+		<div class="reveal medium" id="nav-help" data-reveal data-animation-in="slide-in-left" data-animation-out="slide-out-right">
+			<div class="modalTitle bg-aqua text-white"><h3> <i class="fi-info icon-x2"></i> Help</h3></div>
+			<div class="callout primary">
+				<p>This page allows you to organise the main site navigation based on the pages you've created.</p>
+				<ol>
+					<li>Click <span class="button button-olive tiny">+</span> to move items from the <strong>Available Pages</strong> list into the <strong>Main Menu</strong> (at the end).</li>
+					<li>In the <strong>Main Menu</strong>, click <span class="button button-dark-blue tiny">Edit</span> to change the items <strong>label</strong> (which is the text that appears in the site navigation.)</li>
+					<li>click <span class="button button-dark-purple tiny"><i class="fi-play"></i></span>,to toggle the items in the dropdown menu.</li>
+					
+					<li>Drag items (in the <strong>Main Menu</strong> by grabbing <span class="button button-orange tiny"><i class="fi-list"></i> </span> ) into the desired order, then click <span class="button button-olive tiny">Save</span>  on the info bar.</li>
+				<ol>		    
+		    </div>
+			<button style="top:0;" class="close-button" data-close aria-label="Close modal" type="button"><span aria-hidden="true"><i class="fi-x-circle icon-x2 link-dark-blue"></i></span></button>
+		</div>
+	</div>
+		
+	<div class="medium-8 cell">
+		<div class="h3">Main Menu</div>
+		<div class="callout">
+			<ol id="nv_main" class="menu-sorter dd dd-list">
+				{opt_main}
+			</ol>
+		</div>
+	</div>
+	<div class="small-12 cell">
+		<div class="callout devbox" >
+			 <h3>Output:</h3>
+             <textarea id="out" class="form-control" cols="50" rows="10"></textarea>
+        </div> 
+	</div>
+</div>

@@ -1,0 +1,28 @@
+<form id="media" class="ajaxform" method="post" action="{url}">
+	<input type="hidden" name="action" value="{action}"/>
+	<input type="hidden" name="tbl" value="Media"/>
+	<input type="hidden" name="section" value="media"/>
+	<input type="hidden" name="id" value="{id}"/>
+	<div class="tabs-wrapper">
+		<ul class="tabs" data-tabs id="modal-tabs">
+			<li class="tabs-title is-active"><a href="#panel_1" aria-selected="true">Image</a></li>
+			<li class="tabs-title"><a data-tabs-target="panel_2" href="#panel2">Details</a></li>
+		</ul>
+		<div class="tabs-content" data-tabs-content="modal-tabs">
+			<div class="tabs-panel is-active" id="panel_1">
+				{sidebar}
+			</div>
+			<div class="tabs-panel" id="panel_2">
+				<label>Nice Name<input placeholder="title" type="text" name="mda_nice_name" value="{mda_nice_name}" /></label>
+				<label>Filename<input placeholder="subtitle" type="text" name="mda_filename" value="{mda_filename}" disabled /></label>
+				<label>Path<input type="text" placeholder="slug" name="mda_path" value="{mda_path}" disabled /></label>
+				<label>Type<input type="text" placeholder="slug" name="mda_type" value="{mda_type}" disabled /></label>
+				<div class="button-group small expanded">
+					<button type="button" class="button small button-red expanded loadME" data-ref="{delete}"><i class="fi-x"></i> Delete</button>
+					<button type="submit" class="button small button-olive expanded">{submit}</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</form>
+<script>$('#media .tabs-wrapper').foundation();JQD.inits.initAjaxForm('.ajaxform');</script>

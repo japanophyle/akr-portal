@@ -1,0 +1,33 @@
+<h3>{section_title}</h3>
+<div class="grid-container">
+	<div class="grid-x grid-padding-x">
+		<div class="cell medium-6">
+			<label for="text-first_name">{member_first_name_label}</label>
+			<input type="text" id="text-first_name" name="FirstName" value="{member_first_name}" class="required" {member_first_name_disabled}/>
+		</div>
+		<div class="cell medium-6">
+			<label for="text-last_name">{member_last_name_label}</label>
+			<input type="text" id="text-last_name" name="LastName" value="{member_last_name}" class="required" {member_last_name_disabled}/>
+		</div>
+	</div>
+	<div class="grid-x grid-padding-x">
+		<div class="cell medium-6">
+			<label for="text-email">{member_email_label}</label>
+			<input type="text" id="text-email" name="Email" value="{member_email}" class="required" {member_email_disabled}/>
+		</div>
+		<div class="cell medium-6">
+			<label for="text-number-age">{member_dob_label}</label>
+			<input type="date" id="text-dob" name="Birthdate" value="{member_dob}" class="required" {member_dob_disabled}/>
+		</div>
+	</div>
+	<div class="grid-x grid-padding-x">
+		<div class="cell">
+			<label for="select-language">{member_language_label}</label>
+			<select id="select-language" name="Language" class="required" {member_language_disabled}>
+				{member_language}
+			</select>
+		</div>
+	</div>
+</div>
+		
+		

@@ -1,0 +1,30 @@
+<style>.reveal .card-section.main {max-height: 100%;overflow-Y: auto;}</style>
+<form id="page" class="ajaxform" method="post" action="{url}">
+	<input type="hidden" name="action" value="{action}"/>
+	<input type="hidden" name="tbl" value="Items"/>
+	<input type="hidden" name="section" value="page"/>
+	<input type="hidden" name="id" value="{id}"/>
+	
+	<input type="hidden" name="ItemStatus" value="inactive"/>
+	<div class="modal-body">
+		<div class="label bg-gold text-black text-center expanded">
+			You will be able to add more details once the initial record has been created.
+		</div>
+		<div class="tabs-content">
+			<label>Title: 
+				<input placeholder="name" type="text" name="ItemTitle" value="" />
+			</label>
+			<label>Slug: <em class="text-dark-blue">This is used as an alternative id on the public site. If empty, it will be generated from the title.</em> 
+				<input placeholder="item-slug" type="text" name="ItemSlug" value="" />
+			</label>
+			{optionals}
+		</div>
+	</div>
+	<div class="button-group expanded">
+		{controls}
+		<button type="submit" class="button small button-olive">{submit}</button>
+	</div>	
+</form>
+<script>
+	$('.reveal .modal-body').foundation();
+</script>

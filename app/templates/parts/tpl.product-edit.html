@@ -1,0 +1,26 @@
+<form id="product"class="ajaxform" method="post" action="{url}">
+	<input type="hidden" name="action" value="{action}"/>
+	<input type="hidden" name="tbl" value="Items"/>
+	<input type="hidden" name="section" value="product"/>
+	<input type="hidden" name="id" value="{id}"/>
+	<div class="grid-x grid-margin-x widthlock">
+		<div class="cell small-9">
+			<div class="card">
+				<div class="card-divider title">Main Details</div>
+				<div class="card-section main">
+					<label>Title<input placeholder="title" type="text" name="itm_Title" value="{itm_Title}" /></label>
+					<label>Page Slug<input type="text" placeholder="slug" name="itm_Slug" value="{itm_Slug}"/></label>
+					<label>Price<input placeholder="subtitle" type="text" name="meta[product_price]" value="{product_price}" /></label>
+					<label>Short Description</label><textarea placeholder="just one or two lines" name="itm_Content" rows="5" id="itm_Content" class="inpage_edit">{itm_Content}</textarea>
+					<label>Long Description</label><textarea placeholder="as much text as you can handle." name="itm_Short" rows="15" id="itm_Short" class="inpage_edit">{itm_Short}</textarea>
+					<div class="button-group small expanded">
+						<button type="submit" class="button button-olive">{submit}</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="cell auto">
+			{sidebar}
+		</div>
+	</div>
+</form>

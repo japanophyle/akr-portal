@@ -1,0 +1,24 @@
+<style>.reveal .card-section.main {max-height: 100%;overflow-Y: auto;}</style>
+<form id="dojo" class="ajaxform" method="post" action="{url}">
+	<input type="hidden" name="action" value="{action}"/>
+	<input type="hidden" name="tbl" value="Items"/>
+	<input type="hidden" name="section" value="product"/>
+	<input type="hidden" name="id" value="{id}"/>
+	
+	<input type="hidden" name="OptionGroup" value="{OptionGroup}"/>
+	<input type="hidden" name="OptionID" value="{OptionID}"/>
+	<div class="modal-body">
+		<div class="tabs-content">
+			<label>Category: 
+				<input placeholder="name" type="text" name="OptionValue" value="{OptionValue}" />
+			</label>
+			<label>Code: <em class="text-dark-blue">This is an altenative code used to link products and forms.</em> 
+				<input placeholder="item code" type="text" name="OptionName" value="{OptionName}" />
+			</label>
+		</div>
+	</div>
+	<div class="button-group expanded">
+		{controls}
+		<button type="submit" class="button small button-olive">{submit}</button>
+	</div>	
+</form>

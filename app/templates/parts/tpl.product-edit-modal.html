@@ -1,0 +1,57 @@
+<style>.reveal .card-section.main {max-height: 100%;overflow-Y: auto;}</style>
+<form id="dojo" class="ajaxform" method="post" action="{url}">
+	<input type="hidden" name="action" value="{action}"/>
+	<input type="hidden" name="tbl" value="Items"/>
+	<input type="hidden" name="section" value="product"/>
+	<input type="hidden" name="id" value="{id}"/>
+	<div class="modal-body">
+		<ul class="tabs" data-tabs id="dojo-tabs">
+			<li class="tabs-title is-active"><a href="#panel_1" id="panel_1-label">Details</a></li>
+			<li class="tabs-title"><a href="#panel_2" id="panel_2-label">Notes</a></li>
+		</ul>
+		<div class="tabs-content" data-tabs-content="dojo-tabs">
+			<div class="tabs-panel is-active" id="panel_1">
+				<label>Title: 
+					<input placeholder="name" type="text" name="ItemTitle" value="{ItemTitle}" />
+				</label>
+				<label>Currency:
+					<select name="ItemCurrency">{ItemCurrency}</select>
+				</label>
+				<label>Price: <em class="text-dark-blue">The Format must be "0.00"</em>
+					<input placeholder="100.00" type="text" name="ItemPrice" value="{ItemPrice}" />
+				</label>
+				<label>Unit Qty: 
+					<input type="number" name="ItemQty" value="{ItemQty}"/>
+				</label>
+				<label>Group: <em class="text-dark-blue">This is used to control the products that show on a form.</em>
+					<select name="ItemGroup">{ItemGroup}</select>
+				</label>
+				<label>Category: <em class="text-dark-blue">This is for linking products to events.</em>
+					<select name="ItemCategory">{ItemCategory}</select>
+				</label>
+				<label>Dojo: <em class="text-dark-blue">This is for linking products to dojos.</em>
+					<select name="ItemContent">{ItemContent}</select>
+				</label>
+				<label>Acommadation: 
+					<select name="ItemOrder">{ItemOrder}</select>
+				</label>
+				<label>Slug: <em class="text-dark-blue">This is used as an alternative id on the public site. If empty, it will be generated from the title.</em>
+					<input type="text" placeholder="item-slug" value="{ItemSlug}" disabled/>
+				</label>
+				<label>Status: <em class="text-dark-blue">Disabled items are not visible on the public site.</em>
+					<select name="ItemStatus">{ItemStatus}</select>
+				</label>
+			</div>
+			<div class="tabs-panel" id="panel_2">
+				<textarea id="edit-ItemShort" name="ItemShort" rows="10">{ItemShort}</textarea> 
+			</div>
+		</div>
+	</div>
+	<div class="button-group expanded">
+		{controls}
+		<button type="submit" class="button small button-olive">{submit}</button>
+	</div>	
+</form>
+<script>
+	$('.reveal .modal-body').foundation();
+</script>

@@ -1,0 +1,61 @@
+<style>
+#print_wrapper{font-family:sans-serif;}
+#print_wrapper table, #print_wrapper th, #print_wrapper td{
+  border-collapse:collapse;
+  border: 1px solid black;
+  text-align:left;
+}
+#print_wrapper table{width:100%;}
+#print_wrapper td.small-2{width:8rem;}
+#print_wrapper td{padding:0.2rem 0.5rem}
+#print_wrapper th{padding:0.5rem 0 0 0.5rem}
+#print_wrapper .hide{display:none;}
+#print_wrapper .callout{
+	border:1px solid;
+	width:100%;
+	background-color:#ADD8E6;
+	padding:0;
+	margin-bottom:1rem;
+}
+#print_wrapper .table-section-header{
+		background-color:#ccc;
+}
+#print_wrapper .callout p{
+	padding:0.5rem;
+}
+@media print{
+	#print_wrapper{width:50.2rem; margin: 0 auto;}    
+    .no-print, .no-print *{
+        display: none !important;
+    }
+}
+</style>
+<div id="print_wrapper">
+	<table>
+		<tbody>
+			<tr><th class="table-section-header" colspan="2">{section_label_login}</th></tr>
+			<tr><td class="small-2">{member_username_label}:</td><td class="text-navy">{member_username}</td></tr>
+			<tr><td class="small-2">{member_password_label}:</td><td class="text-navy">{member_password}</td></tr>
+			<tr><th class="table-section-header" colspan="2">{section_label_personal}</th></tr>
+			<tr><td class="small-2">{member_first_name_label}:</td><td class="text-navy">{member_first_name}</td></tr>
+			<tr><td class="small-2">{member_last_name_label}:</td><td class="text-navy">{member_last_name}</td></tr>
+			<tr><td class="small-2">{member_gender_label}:</td><td class="text-navy">{member_gender}</td></tr>			
+			<tr><td class="small-2">{member_dob_label}:</td><td class="text-navy">{member_dob}</td></tr>
+			<tr><td class="small-2">{member_language_label}:</td><td class="text-navy">{member_language}</td></tr>
+			<tr><td class="small-2">{member_citizenship_label}:</td><td class="text-navy">{member_citizenship}</td></tr>
+			<tr><td class="small-2">{member_email_label}:</td><td class="text-navy">{member_email}</td></tr>
+			<tr><td class="small-2">{member_phone_label}:</td><td class="text-navy">{member_phone}</td></tr>
+			<tr><td class="small-2">{member_address_label}:</td><td class="text-navy">{member_address}</td></tr>
+			<tr><td class="small-2">{member_city_label}:</td><td class="text-navy">{member_city}</td></tr>
+			<tr><td class="small-2">{member_post_code_label}:</td><td class="text-navy">{member_post_code}</td></tr>
+			<tr><td class="small-2">{member_country_label}:</td><td class="text-navy">{member_country}</td></tr>
+			<tr><td class="small-2">{member_date_began_kyudo_label}:</td><td class="text-navy">{member_date_began_kyudo}</td></tr>			
+			<tr><td class="small-2">{member_payment_method_label}:</td><td class="text-navy">{member_payment_method}</td></tr>
+			<tr><th class="table-section-header" colspan="2">{section_label_dojo}</th></tr>
+			<tr><td class="small-2">{member_dojo_label}:</td><td class="text-navy">{member_dojo}</td></tr>
+			<tr><td class="small-2">{member_zasha_label}:</td><td class="text-navy">{member_zasha}</td></tr>
+			<tr><th class="table-section-header" colspan="2">{section_label_exam_history}:</th></tr>
+			{member_exam_history}
+		</tbody>
+	</table>
+</div>

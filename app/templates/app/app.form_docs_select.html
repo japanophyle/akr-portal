@@ -1,0 +1,52 @@
+<div class="card checkboxSelector" id="selectDocs">
+	<div class="top-bar">
+		<div class="top-bar-left">
+			<ul class="menu">
+				<li class="title">Select A Document</li>
+			</ul>
+		</div>
+		<div class="top-bar-right">
+			<ul class="menu">
+				<li>
+					<div class="button-group small">
+						<button class="close-button" data-close="" aria-label="Close modal" type="button">
+							<span aria-hidden="true">×</span>
+						</button>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="card-section">
+		<div>
+			<div class="input-group">
+			  <span class="input-group-label">Filter</span>
+			  <input class="input-group-field selectFilter" type="text" data-source="selectMembers_data">
+			</div>
+			<div class="selectCounter metrics"></div>
+		</div>
+		<form id="selection" method="post" action="{form_url}">
+			<div class="selectWrapper" style="height:30rem; overflow-y:auto;">
+				<table id="selectMembers_data">
+					<thead>
+						<th>Name/Location</th><th>Uploaded</th><th>Select</th>
+					</thead>
+					<tbody>
+						{rows}
+					</tbody>
+				</table>
+			</div>
+			<div class="text-right">
+				<button type="button" class="button secondary" data-close ><i class="fi-x-circle"></i> Close</button>
+				<button class="button button-purple selectAll"><i class="fi-checkbox"></i> Select Visible</button>
+				<button class="button button-olive" type="submit"><i class="fi-check"></i> Apply</button>
+				{hidden}
+			</div>
+		</form>
+	</div>
+</div>
+<script>
+checkboxSelector('#selectDocs');
+//myFilter("#selectMembers_filter","#selectMembers_data tbody tr");
+//checkboxToggleVisible('#selectAll','#selectMembers_data tbody tr');
+</script>

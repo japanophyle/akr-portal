@@ -1,0 +1,15 @@
+<form id="form1" class="ajaxForm" name="form1" method="post" action="{form_url}">
+	<table>
+		<thead>
+			<tr><th colspan="2" class="bg-blue">English: <span class="text-white">{english}</span></th></tr>
+			<tr><th>Language</th><th>Translation</th></tr>
+		</thead>
+		<tbody>
+			{rows}
+		</tbody>
+	</table>	
+	<input name="action" type="hidden" value="{form_action}">
+	<input name="english" type="hidden" value="{english}">
+	<input name="type" type="hidden" value="{type}">
+    <button class="button button-olive expanded" type="submit">{form_button}</button>
+</form>	

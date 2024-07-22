@@ -1,0 +1,59 @@
+<style>.reveal .card-section.main {max-height: 100%;overflow-Y: auto;}</style>
+<form id="dojo" class="ajaxform" method="post" action="{url}">
+	<input type="hidden" name="action" value="{action}"/>
+	<input type="hidden" name="tbl" value="Clubs"/>
+	<input type="hidden" name="section" value="dojo"/>
+	<input type="hidden" name="id" value="{id}"/>
+	<div class="modal-body">
+		<ul class="tabs" data-tabs id="dojo-tabs">
+			<li class="tabs-title is-active"><a href="#panel_1" id="panel_1-label">Details</a></li>
+			<li class="tabs-title"><a href="#panel_2" id="panel_2-label">Notes</a></li>
+		</ul>
+		<div class="tabs-content" data-tabs-content="dojo-tabs">
+			<div class="tabs-panel is-active" id="panel_1">
+				<label>Dojo Name: 
+					<input placeholder="name" type="text" name="ClubName" value="{ClubName}" />
+				</label>
+				<label>Code:
+					<input type="text" placeholder="CDE" name="ShortName" value="{ShortName}"/>
+				</label>
+				<label>Leader:
+					<input type="text" placeholder="Ann Leader" name="Leader" value="{Leader}"/>
+				</label>
+				<label>Email: 
+					<input type="text" placeholder="me@home.com" name="Email" value="{Email}"/>
+				</label>
+				<label>Phone: 
+					<input type="text" placeholder="0123 456 789" name="PhoneNumber" value="{PhoneNumber}"/>
+				</label>
+				<label>Website: 
+					<input type="text" placeholder="https://www.mysite.com" name="Website" value="{Website}"/>
+				</label>
+				<label>Address:
+					<textarea name="Address" rows="3">{Address}</textarea>
+				</label> 
+				<label>Geo Coordinates <small>(format: latitude,longitude)</small>: 
+					<input type="text" placeholder="24.4424603, 81.7732636" name="Geo" value="{Geo}"/>
+				</label>
+				<label>Affiliate/Parent Dojo:
+					<select name="AffiliateID">{AffiliateID}</select>
+				</label>
+				<label>Status:
+					<select name="Status">{Status}</select>
+				</label>
+				<input type="hidden" name="LocationID" value="{LocationID}"/>
+				<input type="hidden" name="LeaderID" value="{LeaderID}"/>
+			</div>
+			<div class="tabs-panel" id="panel_2">
+				<textarea name="Notes" rows="10">{Notes}</textarea> 
+			</div>
+		</div>
+	</div>
+	<div class="button-group expanded">
+		{controls}
+		<button type="submit" class="button small button-olive">{submit}</button>
+	</div>	
+</form>
+<script>
+	$('.reveal .modal-body').foundation();
+</script>

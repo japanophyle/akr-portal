@@ -1,0 +1,89 @@
+<style>
+.reveal #invoice-wrap{max-height:30rem; overflow-y:auto;font-size:90%;}
+#invoice-wrap .header { width: 100%; margin: 20px 0; background: #222; text-align: center; color: white; font: bold 15px Helvetica, Sans-Serif; text-decoration: uppercase; letter-spacing: 20px; padding: 8px 0px; }
+#invoice-wrap .address { font-size:1.2rem}
+#invoice-wrap .logo { text-align: right; position: relative; max-width: 540px; max-height: 100px; overflow: hidden; }
+#invoice-wrap .meta-head{background: #eee; color:#333; text-align:center; font-weight:bold; font-size:90%}
+#invoice-wrap .meta-value{background:#fff; border:1px solid #eee; color:#333;}
+#invoice-wrap .items thead th{background: #eee; color:#333; font-weight:bold; font-size:90%}
+#invoice-wrap .hiderow{background-color:#ccc; height:0.2rem;}
+#invoice-wrap .blank{background-color:#fff}
+#invoice-wrap .terms { text-align: center; margin: 20px 0 0 0; }
+#invoice-wrap .terms h5 { text-transform: uppercase; font: 13px Helvetica, Sans-Serif; letter-spacing: 10px; border-bottom: 1px solid black; padding: 0 0 8px 0; margin: 0 0 8px 0; }
+
+</style>
+
+<div id="invoice-wrap" class="callout">
+
+	<div class="header">INVOICE</div>
+	
+	<div class="grid-x margin-x">
+		<div class="cell small-8">
+			
+		</div>
+
+		<div class="cell small-2">
+			<div class="address">{address}</div>
+		</div>
+		<div class="cell small-2">
+			<div class="logo">
+				<img src="gfx/akr/akr_logo_small.jpg" alt="logo" />
+			</div>				
+		</div>
+	</div>		
+	<div class="grid-x margin-x">
+		<div class="cell small-8">
+			<div id="customer-info">{member_info}</div>
+		</div>
+		<div class="cell small-4">
+            <table id="meta">
+                <tr><td class="meta-head">Invoice #</td><td class="meta-value">{invoice_no}</td></tr>
+                <tr><td class="meta-head">Date</td><td data-field="PaymentDate" class="meta-value">{invoice_date}</td></tr>
+                <tr><td class="meta-head">Amount Due</td><td data-field="Due" class="meta-value">{balance}</td></tr>
+                <tr><td class="meta-head">Currency</td><td data-field="Due" class="meta-value">{currency}</td></tr>
+            </table>
+		</div>
+	</div>		
+	<div class="grid-x margin-x">
+		<div class="cell">
+			<table class="items">
+				<thead>
+					<tr>
+						<th>Item</th>
+						<th class="text-right">Price</th>
+						<th class="text-right">Quantity</th>
+						<th class="text-right">Value</th>
+					</tr>
+				</thead>
+				<tbody>
+					<!-- items -->
+					{rows}
+					
+					<tr class="hiderow">
+						<td colspan="4"></td>
+					</tr>
+
+					<tr>
+						<td colspan="2" class="blank"> </td>
+						<td class="meta-head">Total</td>
+						<td class="meta-value text-right">{total}</td>
+					</tr>
+					<tr>
+						<td colspan="2" class="blank"> </td>
+						<td class="meta-head">Amount Paid</td>
+						<td data-field="PaymentAmount" class="meta-value text-right">{paid}</td>
+					</tr>
+					<tr>
+						<td colspan="2" class="blank"> </td>
+						<td class="meta-head">Balance Due</td>
+						<td data-field="Balance" class="meta-value text-right">{balance}</td>
+					</tr>			
+				</tbody>
+			</table>
+			<div class="terms" class="cell small-12">
+				<h5>Terms</h5>
+				<div>{terms}</div>
+			</div>
+		</div>
+	</div>
+</div>

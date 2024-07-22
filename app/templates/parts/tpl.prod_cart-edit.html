@@ -1,0 +1,26 @@
+<form id="product_cart" class="ajaxform" method="post" action="{url}">
+	<input type="hidden" name="action" value="{action}"/>
+	<input type="hidden" name="tbl" value="Items"/>
+	<input type="hidden" name="section" value="prod_cart"/>
+	<input type="hidden" name="id" value="{id}"/>
+	<div class="grid-x grid-margin-x widthlock">
+		<div class="cell small-9">
+			<div class="card">
+				<div class="card-divider title">Main Details</div>
+				<div class="card-section main">
+					<label>Name<input placeholder="sample cart" type="text" name="ItemTitle" value="{ItemTitle}" /></label>
+					<label>Dojo<select name="ItemOrder">{ItemOrder}</select></label>
+					<label>Products</label>
+					{ItemShort}
+					<label>Status<select name="ItemStatus">{ItemStatus}</select></label>
+					<div class="button-group small expanded">
+						<button type="submit" class="button button-olive">{submit}</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="cell auto">
+			{sidebar}
+		</div>
+	</div>
+</form>

@@ -1,0 +1,51 @@
+<style>
+#print_wrapper{font-family:sans-serif;}
+#print_wrapper table, #print_wrapper th, #print_wrapper td{
+  border-collapse:collapse;
+  border: 1px solid black;
+  text-align:left;
+}
+#print_wrapper table{width:100%;}
+#print_wrapper td.small-2{width:8rem;}
+#print_wrapper td{padding:0.2rem 0.5rem}
+#print_wrapper th{padding:0.5rem 0 0 0.5rem}
+#print_wrapper .hide{display:none;}
+#print_wrapper .callout{
+	border:1px solid;
+	width:100%;
+	background-color:#ADD8E6;
+	padding:0;
+	margin-bottom:1rem;
+}
+#print_wrapper .callout p{
+	padding:0.5rem;
+}
+@media print{
+	#print_wrapper{width:50.2rem; margin: 0 auto;}    
+    .no-print, .no-print *{
+        display: none !important;
+    }
+}
+</style>
+<div id="print_wrapper">
+	<h3>{title}<br/><small class="subheader">{member_sem_date}</small></h3>
+	<table>
+		<tbody>
+			<tr><th colspan="2">{section_label_personal}</th></tr>
+			<tr><td class="small-2">{member_name_label}:</td><td class="text-navy">{member_name}</td></tr>
+			<tr><td class="small-2">{member_email_label}:</td><td class="text-navy">{member_email}</td></tr>
+			<tr><td class="small-2">{member_age_label}:</td><td class="text-navy">{member_age}</td></tr>
+			<tr><th colspan="2">{section_label_dojo}</th></tr>
+			<tr><td class="small-2">{member_dojo_label}:</td><td class="text-navy">{member_dojo}</td></tr>
+			<tr><td class="small-2">{member_grade_label}:</td><td class="text-navy">{member_grade}</td></tr>
+			<tr><td class="small-2">{member_zasha_label}:</td><td class="text-navy">{member_zasha}</td></tr>
+			<tr><th colspan="2">{section_label_seminar}</th></tr>
+			<tr><td class="small-2">{member_item_label}:</td><td class="text-navy">{member_item}</td></tr>
+			{member_item2}
+			{member_shinsa_row}
+			<tr><td class="small-2">{member_reg_date_label}:</td><td class="text-navy">{member_reg_date}</td></tr>
+			{arrive_depart}
+			<tr><td class="small-2">{member_notes_label}:</td><td class="text-navy">{member_notes}</td></tr>
+		</tbody>
+	</table>	
+</div>

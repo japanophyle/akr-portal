@@ -1,0 +1,24 @@
+<form id="page"class="ajaxform" method="post" action="{url}">
+	<input type="hidden" name="action" value="{action}"/>
+	<input type="hidden" name="tbl" value="Pages"/>
+	<input type="hidden" name="section" value="page"/>
+	<input type="hidden" name="id" value="{id}"/>
+	<div class="grid-x grid-margin-x widthlock">
+		<div class="cell small-9">
+			<div class="card">
+				<div class="card-divider title">Main Details</div>
+				<div class="card-section main">
+					<label>Title<input placeholder="title" type="text" name="ItemTitle" value="{ItemTitle}" /></label>
+					<label>Page Slug<input type="text" placeholder="slug" name="ItemSlug" value="{ItemSlug}"/></label>
+					<label>Content</label><textarea placeholder="page contents" name="ItemContent" rows="15" id="ItemContent" class="inpage_edit" data-mode="full">{ItemContent}</textarea>
+					<div>
+						<button type="submit" class="button small button-olive expanded">{submit}</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="cell auto">
+			{sidebar}
+		</div>
+	</div>
+</form>

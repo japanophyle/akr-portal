@@ -1,0 +1,34 @@
+<form id="subs"class="ajaxform" method="post" action="{url}">
+	<input type="hidden" name="action" value="add_subscription"/>
+	<input type="hidden" name="tbl" value="subs"/>
+	<input type="hidden" name="section" value="subscription"/>
+	<input type="hidden" name="MemberID" value="{MemberID}"/>
+	<div class="grid-x grid-margin-x widthlock">
+		<div class="cell">
+			<div class="card">
+				<div class="card-divider title">Member</div>
+				<div class="card-section main">
+					<p><strong>{Name}</strong><br/>Grade: {CGradeName}<br/>Dojo: {dojo_name}</p>
+				</div>
+				<div class="card-divider title">Subscription Items</div>
+				<div class="card-section main">
+					<table id="products">
+						<thead><tr><th>ID</th><th>Item</th><th>Price</th><th>Qty</th><th>Value</th><th>control</th></tr></thead>
+						<tbody>
+							<tr id="addProduct">
+								<td colspan="6"><button data-open="products1" type="button" data-size="medium" class="button small button-purple expanded"><i class="fi-plus"></i> Add Products</button></td>
+							</tr>
+						</tbody>
+						<tfoot>
+							<tr class="totals text-navy"><td>Totals</td><td></td><td id="total-items"></td><td id="total-qty">0</td><td id="total-value">0.00</td><td></td></tr>
+						</tfoot>						
+					</table>
+				</div>
+				<button type="submit" class="button small button-olive expanded"><i class="fi-check"></i> Save</button>
+			</div>
+		</div>
+	</div>
+</form>
+<div id="products1" class="reveal" data-animation-in="slide-in-up" data-animation-out="slide-out-down" data-reveal>
+{product_selector}
+</div>

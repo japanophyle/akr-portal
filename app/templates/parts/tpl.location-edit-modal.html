@@ -1,0 +1,29 @@
+<style>.reveal .card-section.main {max-height: 100%;overflow-Y: auto;}</style>
+<form id="option" class="ajaxform" method="post" action="{url}">
+	<input type="hidden" name="action" value="{action}"/>
+	<input type="hidden" name="tbl" value="Option"/>
+	<input type="hidden" name="section" value="option"/>
+	<input type="hidden" name="id" value="{id}"/>
+	<div class="modal-body">
+		<div class="tabs-content">
+			<div class="tabs-panel is-active" id="panel_1">
+				<label>Name: <small class="text-maroon">use short names for Dojos</small>
+					<input placeholder="Location Name" name="LocationName" type="text" value="{LocationName}" />
+				</label>
+				<label>Country: 
+					<input placeholder="USA" type="text" name="LocationCountry" value="{LocationCountry}" list="groups"/>
+				</label>
+				<label>Is Dojo?
+					<select name="LocationDojo">{LocationDOJO}</select>
+				</label>
+			</div>
+		</div>
+	</div>
+	<div class="button-group expanded">
+		{controls}
+		<button type="submit" class="button small button-olive">{submit}</button>
+	</div>	
+</form>
+<script>
+	$('.reveal .modal-body').foundation();
+</script>

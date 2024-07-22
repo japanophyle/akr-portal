@@ -1,0 +1,128 @@
+/* 
+ * Font Custom: bare CSS
+ */
+
+@font-face {
+  font-family: "social-icons";
+  src: url("social-icon-font.eot");
+  src: url("social-icon-font.eot?#iefix") format("embedded-opentype"),
+       url("social-icon-font.woff") format("woff"),
+       url("social-icon-font.ttf") format("truetype"),
+       url("social-icon-font.svg#social-icons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.si-aim:before,
+.si-amazon:before,
+.si-appstore:before,
+.si-basecamp:before,
+.si-behance:before,
+.si-blogger:before,
+.si-cargo:before,
+.si-cloudapp:before,
+.si-creativecommons:before,
+.si-delicious:before,
+.si-designmoo:before,
+.si-digg:before,
+.si-dribbble:before,
+.si-dropbox:before,
+.si-email:before,
+.si-envato:before,
+.si-etsy:before,
+.si-evernote:before,
+.si-facebook:before,
+.si-flickr:before,
+.si-forrst:before,
+.si-foursquare:before,
+.si-github:before,
+.si-goodreads:before,
+.si-googleplus:before,
+.si-instagram:before,
+.si-instapaper:before,
+.si-linkedin:before,
+.si-path:before,
+.si-paypal:before,
+.si-pinboard:before,
+.si-pinterest:before,
+.si-quora:before,
+.si-readernaut:before,
+.si-reddit:before,
+.si-rss:before,
+.si-skype:before,
+.si-soundcloud:before,
+.si-spotify:before,
+.si-squarespace:before,
+.si-tumblr:before,
+.si-twitter:before,
+.si-vimeo:before,
+.si-vsco:before,
+.si-wikipedia:before,
+.si-wordpress:before,
+.si-xbox:before,
+.si-yahoomessenger:before,
+.si-youtube:before,
+.si-zerply:before,
+.si-zootool:before {
+  font-family: "social-icons";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  text-decoration: inherit;
+}
+
+.si-aim:before { content: "\f100"; }
+.si-amazon:before { content: "\f101"; }
+.si-appstore:before { content: "\f102"; }
+.si-basecamp:before { content: "\f103"; }
+.si-behance:before { content: "\f104"; }
+.si-blogger:before { content: "\f105"; }
+.si-cargo:before { content: "\f106"; }
+.si-cloudapp:before { content: "\f107"; }
+.si-creativecommons:before { content: "\f108"; }
+.si-delicious:before { content: "\f109"; }
+.si-designmoo:before { content: "\f10a"; }
+.si-digg:before { content: "\f10b"; }
+.si-dribbble:before { content: "\f10c"; }
+.si-dropbox:before { content: "\f10d"; }
+.si-email:before { content: "\f10e"; }
+.si-envato:before { content: "\f10f"; }
+.si-etsy:before { content: "\f110"; }
+.si-evernote:before { content: "\f111"; }
+.si-facebook:before { content: "\f112"; }
+.si-flickr:before { content: "\f113"; }
+.si-forrst:before { content: "\f114"; }
+.si-foursquare:before { content: "\f115"; }
+.si-github:before { content: "\f116"; }
+.si-goodreads:before { content: "\f117"; }
+.si-googleplus:before { content: "\f118"; }
+.si-instagram:before { content: "\f119"; }
+.si-instapaper:before { content: "\f11a"; }
+.si-linkedin:before { content: "\f11b"; }
+.si-path:before { content: "\f11c"; }
+.si-paypal:before { content: "\f11d"; }
+.si-pinboard:before { content: "\f11e"; }
+.si-pinterest:before { content: "\f11f"; }
+.si-quora:before { content: "\f120"; }
+.si-readernaut:before { content: "\f121"; }
+.si-reddit:before { content: "\f122"; }
+.si-rss:before { content: "\f123"; }
+.si-skype:before { content: "\f124"; }
+.si-soundcloud:before { content: "\f125"; }
+.si-spotify:before { content: "\f126"; }
+.si-squarespace:before { content: "\f127"; }
+.si-tumblr:before { content: "\f128"; }
+.si-twitter:before { content: "\f129"; }
+.si-vimeo:before { content: "\f12a"; }
+.si-vsco:before { content: "\f12b"; }
+.si-wikipedia:before { content: "\f12c"; }
+.si-wordpress:before { content: "\f12d"; }
+.si-xbox:before { content: "\f12e"; }
+.si-yahoomessenger:before { content: "\f12f"; }
+.si-youtube:before { content: "\f130"; }
+.si-zerply:before { content: "\f131"; }
+.si-zootool:before { content: "\f132"; }

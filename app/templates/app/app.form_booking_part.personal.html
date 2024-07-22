@@ -1,0 +1,21 @@
+		<section>
+		   <h3>Personal</h3>
+		   <div class="callout">
+				<div class="grid-x grid-margin-x moc">
+					<div class="cell medium-6 medium-cell-block-y">
+						<label>Forename<input name="prenom" type="text" value="{first_name}"></label>
+						<label>Email<input name="email" type="text" value="{email}"></label>
+					</div>
+					<div class="cell medium-6 medium-cell-block-y">
+						<label>Surname<input name="nom" type="text" id="nom" value="{last_name}"></label>
+						<label>Age<input name="annee" type="number" min="16" max="99" value="{age}"></label>
+					</div>
+				</div>
+			</div>
+		</section>
+		$this->SECTIONS['personal']=array(
+			array('part'=>'first_name','grid'=>'R2','col'=>'a'),
+			array('part'=>'email','grid'=>'R2','col'=>'a'),
+			array('part'=>'last_name','grid'=>'R2','col'=>'b'),
+			array('part'=>'age','grid'=>'R2','col'=>'b'),
+		);

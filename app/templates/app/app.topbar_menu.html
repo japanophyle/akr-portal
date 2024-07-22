@@ -1,0 +1,35 @@
+		  <li>
+			<a href="<?=$URL ?>" title="home">Dashboard</a>
+		  </li>
+		  <li class="has-submenu">
+			<a href="#nogo" class="nogo">Members</a>
+			<ul class="submenu menu vertical" data-submenu>
+			  <li><a href="<?=$URL ?>members/" class="nogo">Manage Members</a>
+					<ul class="submenu menu vertical" data-submenu>
+						<li><a href="<?=$URL ?>members/list/all">All Members</a></li>
+						<li><a href="<?=$URL ?>members/list/active">Active Members</a></li>
+						<li><a href="<?=$URL ?>members/list/inactive">Inactive Members</a></li>
+						<li><a href="<?=$URL ?>members/list/sleeping">"Sleeping" Members</a></li>
+						<li><a href="<?=$URL ?>members/list/uk">UK Members</a></li>
+						<li><a href="<?=$URL ?>members/list/nonuk">non UK Members</a></li>
+					</ul>
+			  </li>
+			  <li><a href="<?=$URL ?>members/new/">New Member</a></li>
+			  <li><a href="<?=$URL ?>members/reports/">Reports</a></li>
+			</ul>
+		  </li>
+		  <li class="has-submenu">
+			<a href="#nogo" class="nogo">Events</a>
+			<ul class="submenu menu vertical" data-submenu>
+			  <li><a href="<?=$URL ?>events/" class="nogo">Manage Events</a>
+					<ul class="submenu menu vertical" data-submenu>
+						<li><a href="<?=$URL ?>events/list/all">All Events</a></li>
+						<li><a href="<?=$URL ?>events/list/ukka">UKKA Events</a></li>
+						<li><a href="<?=$URL ?>events/list/lks">LKS Events</a></li>
+						<li><a href="<?=$URL ?>events/list/ikyf">IKYF Events</a></li>
+					</ul>
+			  </li>
+			  <li><a href="<?=$URL ?>events/new/">New Event</a></li>
+			</ul>
+		  </li>
+		  <?=$NAVBAR ?>	

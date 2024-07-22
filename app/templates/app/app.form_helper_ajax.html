@@ -1,0 +1,21 @@
+<form id="form1" class="ajaxForm" name="form1" method="post" action="{form_url}">
+	<div class="modal-body">
+		<ul class="tabs" data-tabs id="helper-tabs" >
+			<li class="tabs-title is-active"><a href="#panel_help_1">Details</a></li>
+			<li class="tabs-title"><a href="#panel_help_2">Settings</a></li>
+		</ul>
+		<div class="tabs-content" data-tabs-content="helper-tabs">
+			<div class="tabs-panel is-active" id="panel_help_1">
+				{details}
+			</div>
+			<div class="tabs-panel" id="panel_help_2">
+				{settings}
+			</div>
+		</div>
+	</div>
+	{hidden}
+	<input name="action" type="hidden" value="{form_action}">
+	<input name="ID" type="hidden" value="{ID}">
+    <button class="button button-olive expanded" type="submit">{form_button}</button>
+</form>	
+<script>jQuery("#helper-tabs").foundation();JQD.ext.initEditor("#zurbModal .cl-edit");</script>

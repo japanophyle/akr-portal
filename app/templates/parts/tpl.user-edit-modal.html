@@ -1,0 +1,56 @@
+<style>.reveal .card-section.main {max-height: 100%;overflow-Y: auto;}</style>
+<form id="user" class="ajaxForm" method="post" action="{url}">
+	<input type="hidden" name="action" value="{action}"/>
+	<input type="hidden" name="tbl" value="Users"/>
+	<input type="hidden" name="section" value="user"/>
+	<input type="hidden" name="id" value="{id}"/>
+	<div class="modal-body">
+		<ul class="tabs" data-tabs id="users-tabs">
+			<li class="tabs-title is-active"><a href="#panel_Details" id="panel_Details-label">Details</a></li>
+			<li class="tabs-title"><a href="#panel_DojoLock" id="panel_DojoLock-label">DojoLock</a></li>
+			<li class="tabs-title"><a href="#panel_Permissions" id="panel_Permissions-label">Permissions</a></li>
+		</ul>
+		<div class="tabs-content" data-tabs-content="users-tabs">
+			<div class="tabs-panel is-active" id="panel_Details">
+				<label>Name: 
+					<small class="text-dark-green">Users full name.</small>
+					<input placeholder="name" type="text" name="Name" value="{Name}" />
+				</label>
+				<label>Email: 
+					<input placeholder="me@home.com" type="text" name="Email" value="{Email}" />
+				</label>
+				<label>Username: <small class="text-dark-green">This will be use when logging into the site., It should be at least 6 characters long, and contain only letters &amp; numbers.</small><input type="text" placeholder="Username" name="Username" value="{Username}"/></label>
+				<label>Password 
+					<small class="text-dark-green"><strong>Leave this blank unless you want to change the password.</strong> It should be at least 6 characters long, and contain only letters &amp; numbers.</small>
+					<br/><small><strong class="text-maroon">NOTE:</strong> Passwords are stored using a one way encoding method. This means that lost passwords cannot be retrieved, only reset.</small>
+					<input type="text" placeholder="Password" name="Password" value=""/>
+				</label>
+				<label>Member ID: 
+					<small class="text-dark-green">from the members database.</small>
+					<input placeholder="123" type="number" name="MemberID" value="{MemberID}" />
+				</label>
+				<label>Access:
+					<small class="text-dark-green">This sets the security level/role for the user.</small>
+					<select name="Access">{Access}</select>
+				</label>
+				<label>Status:
+					<small class="text-dark-green">This allows you to control the users account status. If it is set to "no" the user will not be able to log in.</small>
+					<select name="Status">{Status}</select>
+				</label>
+			</div>
+			<div class="tabs-panel" id="panel_DojoLock">
+				{DojoLock}
+			</div>
+			<div class="tabs-panel" id="panel_Permissions">
+				{Permissions}
+			</div>		
+		</div>
+	</div>
+	<div class="button-group expanded">
+		{controls}
+		<button type="submit" class="button small button-olive expanded">{submit}</button>
+	</div>	
+</form>
+<script>
+	$('.reveal .modal-body').foundation();
+</script>

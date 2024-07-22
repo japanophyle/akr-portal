@@ -1,0 +1,29 @@
+<h3>{section_title}</h3>
+<div class="grid-container">
+    <div class="grid-x grid-padding-x">
+        <div class="cell medium-6">
+			<label for="select-dojo">{member_dojo_label}</label>
+            <select id="select-dojo" name="DojoID" class="required" {member_dojo_disabled}>
+				{member_dojo}
+            </select>
+        </div>
+        <div class="cell medium-6">
+			<label for="select-zasha">{member_zasha_label}</label>
+			<select id="select-zasha" name="zasha" class="required" {member_zasha_disabled}>
+				{member_zasha}
+			</select>
+		</div>
+    </div>
+    <div class="grid-x grid-padding-x">
+        <div class="cell medium-6">
+			<label for="select-grade">{member_grade_label}</label>
+			<select id="select-grade" name="CurrentGrade" class="required" {member_grade_disabled}>
+				{member_grade}
+			</select>
+		</div>
+        <div class="cell medium-6">
+			<label for="text-date-grade_date">{member_grade_date_label}</label>
+			<input type="date" id="text-date-grade_date" name="CGradedate" value="{member_grade_date}" class="required" {member_grade_date_disabled}/>
+		</div>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+<style>.reveal .card-section.main {max-height: 100%;overflow-Y: auto;}</style>
+<form id="option" class="ajaxform" method="post" action="{url}">
+	<input type="hidden" name="action" value="{action}"/>
+	<input type="hidden" name="tbl" value="Option"/>
+	<input type="hidden" name="section" value="option"/>
+	<input type="hidden" name="id" value="{id}"/>
+	<div class="modal-body">
+		<div class="tabs-content">
+			<div class="tabs-panel is-active" id="panel_1">
+				<label>Name: <small class="text-maroon">This cannot be changed once saved.</small>
+					<input placeholder="name" type="text" name="OptionName" value="{OptionName}" />
+				</label>
+				<label>Group: <small class="text-maroon">cursor down for a list</small>
+					<input placeholder="my group" type="text" name="OptionGroup" value="{OptionGroup}" list="groups"/>
+					<datalist id="groups">{groups}</datalist>
+				</label>
+				<label>Description: <small class="text-maroon">A brief description of the option</small>
+					<input placeholder="whats it for?" type="text" name="OptionDescription" value="{OptionDescription}" />
+				</label>
+				<label>Alt. Ref.: <small class="text-maroon">Ignore this if you are not sure</small>
+					<input placeholder="22" type="number" name="OptionID" value="{OptionID}" />
+				</label>
+				<label>Value: <small class="text-maroon">The value for this option.</small>
+				{OptionValue}
+				</label>
+			</div>
+		</div>
+	</div>
+	<div class="button-group expanded">
+		{controls}
+		<button type="submit" class="button small button-olive">{submit}</button>
+	</div>	
+</form>
+<script>
+	$('.reveal .modal-body').foundation();
+</script>
